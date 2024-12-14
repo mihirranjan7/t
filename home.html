@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Advanced Sample Page</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 60px;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .content, .form-container {
+            flex: 1;
+            min-width: 280px;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Form Styling */
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Media Query for Responsiveness */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .content, .form-container {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+
+            <!-- Content Section -->
+            <div class="content">
+                <h2>Welcome to the Advanced Sample Page</h2>
+                <p>This page includes a navigation bar, a responsive layout, a contact form, and a footer. Resize the window to see how the layout adjusts.</p>
+                <p>Feel free to explore and modify the code to suit your needs!</p>
+            </div>
+
+            <!-- Form Section -->
+            <div class="form-container">
+                <h2>Contact Us</h2>
+                <form id="contactForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <input type="submit" value="Send Message">
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Advanced Sample Page. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Form Validation -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                alert('Form submitted successfully!');
+            } else {
+                alert('Please fill in all the fields.');
+            }
+        });
+    </script>
+</body>
+
+</html>
